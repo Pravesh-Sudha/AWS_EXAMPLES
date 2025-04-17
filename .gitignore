@@ -1,1 +1,4 @@
 s3/bash-scripts/iac/cdk/node_modules
+s3/encyption/vendor
+s3/encyption/.bundle
+s3/encyption/Gemfile.lock
