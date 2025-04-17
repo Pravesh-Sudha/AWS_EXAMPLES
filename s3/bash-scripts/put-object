@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "== Put Object"
+
+if [ -z "$1" ]; then 
+    echo "No bucket Name found"
+    exit 1
+fi
+
+BUCKET_NAME=$1
+
+aws s3api put-object \
+--bucket $BUCKET_NAME \
+--key hello.txt 
+
+aws s3api get-object \
+--bucket $BUCKET_NAME \
+--key hello.txt \
+new-hello.txt

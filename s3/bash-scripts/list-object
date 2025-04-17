@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "== List Object"
+
+if [ -z "$1" ]; then 
+    echo "No bucket Name found"
+    exit 1
+fi
+
+BUCKET_NAME=$1
+
+aws s3api list-objects \
+--bucket $BUCKET_NAME \
+--output yaml \
+--query Contents[].Key
