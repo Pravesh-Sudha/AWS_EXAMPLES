@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "== Deploying a role to new user 'sts-machine-user'"
+
+STACK_NAME="S3-stack"
+
+aws cloudformation deploy \
+ --template-file template.yml \
+ --stack-name $STACK_NAME \
+ --capabilities CAPABILITY_IAM
