@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# === CONFIGURATION ===
+BUCKET_NAME="pravesh-static-site-$(date +%s)"  # Ensures a unique bucket name
+REGION="us-east-1"  # Change if needed
+INDEX_FILE="index.html"
+
+# === STEP 1: Create the S3 bucket ===
+echo "Creating bucket: $BUCKET_NAME"
+aws s3api create-bucket \
+  --bucket "$BUCKET_NAME" \
+  --region "$REGION" \
+
+# === STEP 2: Disable block public access ===
+echo "Disabling block public access..."
+aws s3api put-public-access-block \
+  --bucket "$BUCKET_NAME" \
+  --public-access-block-configuration BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false
+
+# === STEP 3: Set up bucket policy for public read ===
+echo "Applying public read bucket policy..."
+POLICY=$(cat <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::$BUCKET_NAME/*"
+    }
+  ]
+}
+EOF
+)
+
+aws s3api put-bucket-policy --bucket "$BUCKET_NAME" --policy "$POLICY"
+
+# === STEP 4: Enable static website hosting ===
+echo "Enabling static website hosting..."
+aws s3 website s3://$BUCKET_NAME/ --index-document index.html
+
+# === STEP 5: Upload index.html file ===
+echo "Uploading $INDEX_FILE..."
+aws s3 cp "$INDEX_FILE" "s3://$BUCKET_NAME/"
+
+# === STEP 6: Print the website URL ===
+echo "Static site is now hosted at:"
+echo "http://$BUCKET_NAME.s3-website-$REGION.amazonaws.com"
