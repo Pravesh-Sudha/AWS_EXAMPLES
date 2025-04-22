@@ -9,10 +9,10 @@ Parameters:
     Default: t2.micro
   SubnetId:
     Type: String
-    Default: subnet-070bdaf5612608fd1
+    Default: subnet-0892330102cc093bf
   VpcId: 
     Type: String
-    Default: vpc-0cee03b9f34798287
+    Default: vpc-032f56e211ca4e677
 Resources:
   SSMRole:
     Type: AWS::IAM::Role
