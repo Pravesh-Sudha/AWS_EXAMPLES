@@ -3,7 +3,7 @@ Description: A CloudFormation template to create an EC2 instance using Amazon Li
 Parameters:
   ImageId: 
     Type: String
-    Default: ami-0a38b8c18f189761a
+    Default: ami-065aeacd44e98d9ac
   InstanceType:
     Type: String
     Default: t2.micro
