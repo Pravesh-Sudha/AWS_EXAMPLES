@@ -77,7 +77,7 @@ Happy learning, and let’s conquer the #CloudJourney together! 🚀
 **Connect with Me**
 
 - GitHub: [Pravesh-Sudha](https://github.com/Pravesh-Sudha)
-- LinkedIn: [Your LinkedIn Profile URL]
-- Twitter: [Your Twitter Handle]
+- LinkedIn: [Pravesh-Sudha](https://www.linkedin.com/in/pravesh-sudha/)
+- Twitter: [Pravesh-Sudha](https://x.com/praveshstwt)
 
 Follow my progress for more AWS labs and certification prep updates!
