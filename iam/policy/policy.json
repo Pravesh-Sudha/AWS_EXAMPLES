@@ -1,0 +1,16 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Access to IAM and STS",
+			"Effect": "Allow",
+			"Action": [
+				"iam:*",
+				"sts:*"
+			],
+			"Resource": [
+				"*"
+			]
+		}
+	]
+}

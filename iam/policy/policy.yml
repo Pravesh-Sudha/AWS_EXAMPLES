@@ -1,0 +1,6 @@
+Version:
+Statement:
+  - Sid: "Access to S3"
+    Effect: Allow
+    Action: "s3:*"
+    Reources: "*"

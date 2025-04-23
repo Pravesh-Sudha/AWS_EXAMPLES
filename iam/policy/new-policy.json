@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Access to S3, IAM and STS",
+      "Effect": "Allow",
+      "Action": ["s3:*", "iam:*", "sts:*"],
+      "Reources": "*"
+    }
+  ]
+}
