@@ -3,16 +3,16 @@ Description: A CloudFormation template to create an EC2 instance using Amazon Li
 Parameters:
   ImageId: 
     Type: String
-    Default: ami-0a38b8c18f189761a
+    Default: ami-065aeacd44e98d9ac
   InstanceType:
     Type: String
     Default: t2.micro
   SubnetId:
     Type: String
-    Default: subnet-070bdaf5612608fd1
+    Default: subnet-0892330102cc093bf
   VpcId: 
     Type: String
-    Default: vpc-0cee03b9f34798287
+    Default: vpc-032f56e211ca4e677
 Resources:
   SSMRole:
     Type: AWS::IAM::Role
