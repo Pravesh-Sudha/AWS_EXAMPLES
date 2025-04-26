@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "aws-amplify": "^6.14.3",
+    "graphql-tag": "^2.12.6"
+  },
+  "name": "appsync",
+  "version": "1.0.0",
+  "main": "aws-exports.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
