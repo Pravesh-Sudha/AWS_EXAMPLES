@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create SNS Topic
+Resources:
+  SNSTopic:
+    Type: AWS::SNS::Topic
+  Lambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: python3.12
+      PackageType: Zip
+      InlineCode: "import json\ndef handler(event, context):\n    message_str = event['Records'][0]['Sns']['Message']\n\
+        \    m = json.loads(message_str)\n    message = 'Hello {} {}!'.format(m['first_name'],\
+        \ m['last_name'])  \n    print(message)\n    return\n"
+      Events:
+        SNSEvent:
+          Type: SNS
+          Properties:
+            Topic:
+              Ref: SNSTopic
