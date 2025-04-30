@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "== deploy basic lambda function"
+
+STACK_NAME="basic-lambda"
+
+aws cloudformation deploy \
+--template-file template.yml \
+--capabilities CAPABILITY_NAMED_IAM \
+--region us-east-1 \
+--stack-name $STACK_NAME

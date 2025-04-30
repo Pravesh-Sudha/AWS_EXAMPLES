@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  ZipLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: function.handler
+      Runtime: python3.12
+      PackageType: Zip
+      CodeUri: 
+        Bucket: lambda-function-3210
+        Key: function.zip
+       
