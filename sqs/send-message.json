@@ -1,0 +1,14 @@
+{
+    "Fruit": {
+      "DataType": "String",
+      "StringValue": "MuskMelon"
+    },
+    "Greeting": {
+      "DataType": "String",
+      "StringValue": "Hello, World!"
+    },
+    "FavAnime": {
+      "DataType": "String",
+      "StringValue": "My-Hero-Academia"
+    }
+  }

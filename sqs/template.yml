@@ -1,0 +1,5 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: An ALB serving up a web server
+Resources:
+  MySQS:
+    Type: AWS::SQS::Queue

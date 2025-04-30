@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "== deploy sqs "
+
+STACK_NAME="my-sqs-stack"
+QUEUE_URL="https://sqs.us-east-1.amazonaws.com/624448302051/my-sqs-stack-MySQS-vh65kFU44OBp"
+
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/cloudformation/deploy/index.html
+## Create the Queue
+aws cloudformation deploy \
+--template-file template.yml \
+--capabilities CAPABILITY_NAMED_IAM \
+--region us-east-1 \
+--stack-name $STACK_NAME
+
+## Send Message to Queue
+aws sqs send-message \
+--queue-url $QUEUE_URL \
+--message-body "Information about the largest city in Any Region." \
+--delay-seconds 1 \
+--message-attributes file://send-message.json
+
+## Receive Message to Queue
+aws sqs receive-message \
+--queue-url $QUEUE_URL \
+--attribute-names All \
+--message-attribute-names All \
+--max-number-of-messages 10
