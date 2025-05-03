@@ -6,9 +6,13 @@ aws elasticache create-serverless-cache
 ```
 
 ## Deploy the EC2 instance
+```sh
 chmod u+x deploy
-./deploy          (Make sure to change the value of subnet, VPC, Sgs, AMI Id of image and open port 6379 in the sg)
+./deploy          ## (Make sure to change the value of subnet, VPC, Sgs, AMI Id of image and open port 6379 in the sg)
+```
 
 ## Test the endpoints
+```sh
 sudo su - ubuntu 
 redis-cli -h <Your-Elastic-Cache-Endpoints> --tls
+```
