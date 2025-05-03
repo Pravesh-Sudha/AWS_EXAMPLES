@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "== Deploy An Ec2 Instance to Test ElasticCache"
+
+STACK_NAME="ec2-elastic-cache"
+
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/cloudformation/deploy/index.html
+aws cloudformation deploy \
+--template-file template.yaml \
+--capabilities CAPABILITY_NAMED_IAM \
+--region us-east-1 \
+--stack-name $STACK_NAME
