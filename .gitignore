@@ -3,3 +3,6 @@ s3/encyption/vendor
 s3/encyption/.bundle
 s3/encyption/Gemfile.lock
 appsync/node_modules
+comprehend/.bundle
+comprehend/vendor
+comprehend/Gemfile.lock
