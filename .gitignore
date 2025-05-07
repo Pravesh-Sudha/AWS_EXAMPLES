@@ -9,3 +9,6 @@ comprehend/Gemfile.lock
 textract/.bundle
 textract/vendor
 textract/Gemfile.lock
+translate/.bundle
+translate/vendor
+translate/Gemfile.lock
