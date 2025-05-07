@@ -6,3 +6,6 @@ appsync/node_modules
 comprehend/.bundle
 comprehend/vendor
 comprehend/Gemfile.lock
+textract/.bundle
+textract/vendor
+textract/Gemfile.lock
