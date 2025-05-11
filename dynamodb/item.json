@@ -1,0 +1,7 @@
+{
+  "pk": { "S": "USER#001" },
+  "sk": { "S": "PROFILE#2025-01-01" },
+  "name": { "S": "Alice Johnson" },
+  "email": { "S": "alice@example.com" },
+  "role": { "S": "admin" }
+}
